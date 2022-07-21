@@ -1,0 +1,17 @@
+
+<%= @event.title%>
+<%= @event.body%>
+<%= @event.date%>
+ 
+
+ <%= form_with model: @invitee do |form| %>
+  <%= form.submit "Join Event" %>
+    <%end%>
+
+    Currently attending:
+    <%=@event.attendants.count%>
+    <h1><%@event.attendants.includes(:invitees).each do |a|%>
+    <%=a.name%>
+    <%end%></h1>
+
+   

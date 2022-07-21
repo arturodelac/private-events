@@ -1,0 +1,20 @@
+<h1>EventFinder</h1>
+<h1>Past Events</h1>
+<%@events.past.each do |event|%>
+<%= event.title%>
+<%= event.body%>
+<%= event.date%>
+<%=link_to "Read more...",event_url(event)%>
+<br>
+<%end%>
+
+<h1>Future Events</h1>
+
+<%@events.future.each do |event|%>
+<%= event.title%>
+<%= event.body%>
+<%= event.date%>
+<%=link_to "Read more...",event_url(event)%>
+<br>
+<%end%>
+

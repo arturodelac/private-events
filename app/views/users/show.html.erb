@@ -1,0 +1,25 @@
+<h1>Created Events</h1>
+<%@events.each do |event|%>
+<%= event.title%>
+<%= event.body%>
+<%= event.date%>
+<br>
+<%end%>
+
+<br>
+<h1>Attended Events</h1>
+<h1>Past Events</h1>
+<%@attended_events.where('date < ?',[DateTime.now]).each do |event|%>
+<%= event.title%>
+<%= event.body%>
+<%= event.date%>
+<br>
+<%end%>
+
+<h1>Future Events</h1>
+<%@attended_events.where('date > ?',[DateTime.now]).each do |event|%>
+<%= event.title%>
+<%= event.body%>
+<%= event.date%>
+<br>
+<%end%>

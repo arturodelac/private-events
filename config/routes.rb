@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'events#index'
+  resources :events 
+  post '/events/:id', to: 'invitees#create'
+
+  get 'users/:id' => 'users#show'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
